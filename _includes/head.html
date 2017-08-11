@@ -1,0 +1,63 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>
+    {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+  </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- preload fonts -->
+  <link rel="preload" href="{% asset_path raleway-v11-latin-900.woff2 %}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{% asset_path merriweather-v13-latin-regular.woff2 %}" as="font" type="font/woff2" crossorigin>
+  <!-- preconnect to analytics -->
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="{% asset_path apple-touch-icon %}">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Kunaal Arya">
+  <meta name="apple-mobile-web-app-title" content="Kunaal Arya">
+  <meta name="theme-color" content="#ea0011">
+  <meta name="msapplication-navbutton-color" content="#ea0011">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="msapplication-starturl" content="/?utm_source=homescreen">
+
+  {% stylesheet main.css %}
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+  {% if page.layout == "post" %}
+  <!-- Twitter -->
+  {% if page.image %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+  {% else %}
+  <meta name="twitter:card" content="summary">
+  {% endif %}
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.excerpt | strip_html | strip_newlines | xml_escape | truncate: 200 }}">
+  <meta name="twitter:site" content="@kunaalarya">
+  <meta name="twitter:creator" content="@kunaalarya">
+
+  <!-- Facebook -->
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | xml_escape | truncate: 200 }}">
+  {% if page.image %}<meta name="og:image" content="{{ site.url }}{{ page.image }}">{% endif %}
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ site.title }}">
+
+  <!-- Google -->
+  <meta itemprop="name" content="{{ page.title }}">
+  <meta itemprop="description" content="{{ page.excerpt | strip_html | strip_newlines | xml_escape | truncate: 200 }}">
+  {% if page.image %}<meta itemprop="image" content="{{ site.url }}{{ page.image }}">{% endif %}
+  {% endif %}
+
+  <!-- Origin Trial Token, feature = Web Share, origin = https://philna.sh, expires = 2017-04-17 -->
+  <meta http-equiv="origin-trial" data-feature="Web Share" data-expires="2017-04-17" content="AvAvrNEtWccBI18wmx2kSiTb5b82ySmejR5qOj9TQKQrMB8vrxBK9LDnmOAsSvf9tNluNktpdICrQMF5iPAHDAEAAABLeyJvcmlnaW4iOiJodHRwczovL3BoaWxuYS5zaDo0NDMiLCJmZWF0dXJlIjoiV2ViU2hhcmUiLCJleHBpcnkiOjE0OTI0NzM2MDB9">
+
+  {% include google_analytics.html %}
+</head>

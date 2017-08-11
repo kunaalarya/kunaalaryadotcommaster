@@ -1,0 +1,15 @@
+.intro {
+  margin-bottom: $spacing-unit*2;
+}
+
+.the-rest {
+  padding-top: $spacing-unit*2;
+  margin-bottom: $spacing-unit*2;
+  border-top: 1px solid $border-color;
+}
+
+@include media-query-min(600px) {
+  .intro {
+    font-size: 21px;
+  }
+}

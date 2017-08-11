@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{
+  "name": "Kunaal Arya",
+  "short_name": "Kunaal Arya",
+  "start_url": "/?utm_source=homescreen",
+  "description": "Blog and personal site of Kunaal Arya.",
+  "dir": "ltr",
+  "lang": "en-GB",
+  "display": "minimal-ui",
+  "orientation": "any",
+  "background_color": "#fcfcfc",
+  "theme_color": "#ea0011",
+  "icons": [
+    {
+      "src": "{% asset_path icon %}",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

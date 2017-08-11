@@ -1,0 +1,101 @@
+.post-title {
+  text-align: center;
+  font-size: $base-font-size*2;
+  line-height: 1;
+  margin: $spacing-unit*2 0;
+}
+
+@include media-query-min(700px) {
+  .post-title {
+    font-size: $base-font-size*3;
+  }
+}
+
+.post-header-image{
+  display: block;
+  width: 100%;
+  margin-top: -$spacing-unit;
+  margin-bottom: $spacing-unit;
+}
+
+.post-meta {
+  font-style: italic;
+  font-size: $small-font-size;
+}
+
+.post footer {
+  margin-top: $spacing-unit*2;
+}
+
+.post-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.post-list h2 {
+  font-size: $base-font-size*1.5;
+  line-height: 1.25;
+}
+.post-list .post {
+  margin-bottom: $spacing-unit;
+  padding-bottom: $spacing-unit;
+  border-bottom: 1px solid $border-color;
+}
+.post-list .post:last-child{
+  border-bottom: none;
+}
+.post-list .post p:last-child{
+  margin-bottom: 0;
+}
+.post-content h2{
+  padding: 0.5em 0;
+}
+
+/* Centres embedded tweets in posts */
+.twitter-tweet-rendered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Images */
+
+.post-image {
+  display: block;
+  text-align: center;
+}
+
+.post-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-image-outside {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@include media-query-min(600px) {
+  .post-image-left {
+    float:left;
+    margin-left: 0;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+@include media-query-min(700px) {
+  .post-image-outside {
+    margin-left: -100px;
+    margin-right: -100px;
+  }
+}
+
+.post-promo {
+  margin-top: $spacing-unit*3;
+  background-color: $grey-color-light;
+  text-align: center;
+}
+.post-promo p {
+  padding: $spacing-unit 0;
+  margin-bottom: 0;
+}
